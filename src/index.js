@@ -9,6 +9,7 @@ import Shop from './Shop';
 import Prod from './Prod';
 import { Route } from 'react-router-dom';
 import { BrowserRouter, Routes, Link } from 'react-router-dom';
+import Dep from './Dep';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,7 +22,7 @@ root.render(
             <Route path="/books" element={<Books />}/>
             <Route path="/shop" element={<Shop />}>
                 <Route index element = {<h1>Welcome!</h1>}/>
-                <Route path= ":prodid" element = {<Prod/>}/>
+                <Route path= ":depid" element = {<Dep/>}/>
             </Route>
         </Route>
       </Routes>

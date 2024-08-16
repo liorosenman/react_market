@@ -1,11 +1,11 @@
 import React from 'react'
+import Cart from './Cart';
+import changeCart from './Cart'
 
-const Prod = (prod) => {
+const Prod = ({id, name, price}) => {
   return (
-    <div>
-        <button>+</button>
-        <button>-</button>
-        <h3>{prod.name}, {prod.price}, {}</h3>
+    <div>    
+        <h3>{name}, {price}</h3><button onClick = {() => changeCart(id, 1)}>ADD</button>       
     </div>
   )
 }

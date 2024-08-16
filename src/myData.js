@@ -54,6 +54,6 @@ export function getProducts() {
 }
 
 export function getProductsByCategory(id){
-    return prods.filter(prod.catid == id);
+    return prods.filter(prod => prod.catid == id);
 }
 
