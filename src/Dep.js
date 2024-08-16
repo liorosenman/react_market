@@ -5,14 +5,18 @@ import Cart from './Cart';
 import { useParams } from 'react-router-dom';
 
 const Dep = () => {
-    const { depid } = useParams().depid
+    const { depid } = useParams();
+    console.log(depid);
     const allDepProducts = getProductsByCategory(depid)
     return (
         <div>
           {allDepProducts.map(prod => (
             <Prod key={prod.id} name={prod.name} price={prod.price} />
           ))}
+          <hr></hr>
+        <Cart></Cart>
         </div>
+        
       );
     };
     // depProductsInCart = getSpecificDepProdsInCart(depid)

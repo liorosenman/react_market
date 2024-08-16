@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-const Cart = () => {
+    const Cart = () => {
     const [cart, setCart] = useState([])
 
     useEffect(() => {
         let temp = JSON.parse(localStorage.getItem("cart"))
-        if (temp != null) {
+        if (temp !== null) {
             setCart(temp)
         }
     }, [])
@@ -16,7 +16,7 @@ const Cart = () => {
         }
     }, [cart]) 
 
-    const changeCart = (prodid, delta) => {
+    const changeCart = (prodid, delta) => {   
         let tempProduct = cart.filter(item => item.id == prodid)[0]
         if (tempProduct){
             tempProduct.amount += delta
@@ -26,10 +26,10 @@ const Cart = () => {
                 }
             }
         }else{
+            console.log("New product");
             tempProduct.amount = 1
             setCart([...cart, tempProduct])
         }
-     
     }
 
     const totalSumForProd = () => {
@@ -46,7 +46,7 @@ const Cart = () => {
                 <td>Total</td>
             </tr>
             {cart.map(prod => 
-                <tr>
+                <tr key={prod.id}>
                     <td>{prod.name}</td>
                     <td>{prod.price}</td>
                     <td>{prod.amount}</td>
